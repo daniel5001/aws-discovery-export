@@ -519,7 +519,7 @@ while run_script:
                       format=log_format,
                       level=logging.ERROR)
   logging.debug('Starting collection at: %s', datetime.datetime.now())
-  ec2_client = boto3.client('ec2')
+  ec2_client = boto3.client('ec2',region_name='us-west-2')
 
   logging.info('Get all regions')
   regions = ec2_client.describe_regions(AllRegions=True)
